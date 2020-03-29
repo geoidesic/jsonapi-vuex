@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <JsonapiVuex />
+    <TestComponent />
   </div>
 </template>
 
 <script>
-import JsonapiVuex from './components/JsonapiVuex.vue'
+import TestComponent from './components/TestComponent.vue'
 
 export default {
   name: 'app',
   components: {
-    JsonapiVuex,
+    TestComponent,
   },
 }
 </script>
