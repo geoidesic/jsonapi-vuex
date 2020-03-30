@@ -17,7 +17,7 @@ export default {
   },
   computed: {
     devices() {
-      return this.$store.getters['jv/get']('devices')
+      return this.$store.getters['devices/get']('devices')
     },
   },
   created() {
