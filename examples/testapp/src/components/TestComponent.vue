@@ -17,10 +17,12 @@ export default {
   },
   computed: {
     devices() {
-      return this.$store.getters['devices/get']()
+      return this.$store.getters['jv/get']('devices')
     },
   },
-  created() {},
+  created() {
+    console.log('devices', this.devices)
+  },
   methods: {},
 }
 </script>

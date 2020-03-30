@@ -3,7 +3,6 @@ import Vuex from 'vuex'
 import axios from 'axios'
 import { jsonapiModule } from '../../../../src/jsonapi-vuex'
 import * as devices from './devices'
-import _ from 'lodash'
 
 Vue.use(Vuex)
 
@@ -19,6 +18,7 @@ const api = axios.create({
 export default new Vuex.Store({
   strict: true,
   modules: {
-    devices: _.merge(jsonapiModule(api, { clearOnUpdate: true }), devices),
+    devices,
+    jv: jsonapiModule(api, { clearOnUpdate: true }),
   },
 })
