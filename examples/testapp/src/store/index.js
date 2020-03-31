@@ -5,8 +5,6 @@ import { jsonapiModule } from '../../../../src/jsonapi-vuex'
 import * as devices from './devices'
 import _ from 'lodash'
 
-Vue.use(Vuex)
-
 const api = axios.create({
   // connect to local jsonapi-mock server
   baseURL: 'http://localhost:3000',
@@ -16,9 +14,14 @@ const api = axios.create({
   },
 })
 
-export default new Vuex.Store({
-  strict: true,
+Vue.use(Vuex)
+
+export const storeConfig = {
   modules: {
     devices: _.merge(devices, jsonapiModule(api, { clearOnUpdate: true })),
   },
-})
+}
+
+const store = new Vuex.Store(storeConfig)
+
+export default store

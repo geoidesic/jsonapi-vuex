@@ -21,7 +21,7 @@ export default {
     },
   },
   created() {
-    console.log('devices', this.devices)
+    console.log('someGetter', this.$store.getters)
   },
   methods: {},
 }
